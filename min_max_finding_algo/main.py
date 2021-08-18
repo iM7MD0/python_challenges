@@ -2,30 +2,31 @@ import numpy as np
 
 
 def list_max(in_list):
-    max = 0
+    imax = in_list[0]
     for i in in_list:
-        if i > max:
-            max = i
+        if i > imax:
+            imax = i
             # print(max)
             # print(i)
-    return max
-
+    return imax
 
 def list_min(in_list):
-    min = 0
+    imin = in_list[0]
     for i in in_list:
-        if i < min:
-            min = i
+        if i < imin:
+            imin = i
             # print(max)
             # print(i)
-    return min
+    return imin
 
+def list_sort(in_list):
+	pass
 
 if __name__ == "__main__":
     # print("hello!")
 
-    val = np.random.normal(15, 7, 1000).astype(int)
+    val = np.random.normal(-100, 2, 1000).astype(int)
 
-    print(list_min(val))
+    print(list_min(val), min(val))
 
-    print(list_max(val))
+    print(list_max(val), max(val))
