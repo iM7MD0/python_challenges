@@ -1,16 +1,23 @@
-import random
+import numpy as np
+
 
 def list_max(in_list):
-	pass
+    for i in in_list:
+        for j in in_list[i]:
+            print(i)
+
 
 def list_min(in_list):
-	pass
+    pass
+
 
 if __name__ == "__main__":
-	print("hello!")
+    print("hello!")
 
-	val = random.uniform(0, 1000, 1000)
+    val = np.random.normal(15, 7, 1000).astype(int)
 
-	print(list_min(val))
+    print(val)
 
-	print(list_max(val))
+    print(list_min(val))
+
+    print(list_max(val))
