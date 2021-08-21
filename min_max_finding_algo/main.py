@@ -1,4 +1,7 @@
 import numpy as np
+import time
+
+sec = time.time()
 
 
 def list_max(in_list):
@@ -24,13 +27,10 @@ def list_min(in_list):
 def list_sort(in_list):
     in_list_sorted = []
     py_list = list(in_list)
-    isort = py_list[0]
-    for i in py_list:
+    for i in in_list:
         x = list_max(py_list)
         in_list_sorted.append(x)
         py_list.remove(x)
-        # print(i)
-        # print(x)
     return in_list_sorted
 
     return in_list_sorted
@@ -39,9 +39,7 @@ def list_sort(in_list):
 if __name__ == "__main__":
     # print("hello!")
 
-    val = np.random.normal(100, 2, 1000).astype(int)
-
-    print(val)
+    val = np.random.normal(50, 30, 100).astype(int)
 
     print(list_min(val), min(val))
 
