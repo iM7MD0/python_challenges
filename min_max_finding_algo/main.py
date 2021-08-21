@@ -23,12 +23,16 @@ def list_min(in_list):
 
 def list_sort(in_list):
     in_list_sorted = []
-    isort = in_list[0]
-    for i in in_list:
-        if i > isort:
-            isort = i
-            in_list_sorted.append(i)
-            in_list.remove()  # Error 'numpy.ndarray' object has no attribute 'remove' when i use remove function
+    py_list = list(in_list)
+    isort = py_list[0]
+    for i in py_list:
+        x = list_max(py_list)
+        in_list_sorted.append(x)
+        py_list.remove(x)
+        # print(i)
+        # print(x)
+    return in_list_sorted
+
     return in_list_sorted
 
 
