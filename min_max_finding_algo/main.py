@@ -38,7 +38,6 @@ def list_sort(in_list):
 if __name__ == "__main__":
     # print("hello!")
 
-
     val = np.random.normal(50, 30, 50000).astype(int)
 
     tm1 = time.time()
@@ -50,27 +49,26 @@ if __name__ == "__main__":
     min(val)
     tp2 = time.time()
     print("python min() timing =", tp2 - tp1)
-    print("min() ratio =", (tm2 - tm1)/(tp2 - tp1)*100)
+    print("min() ratio =", (tm2 - tm1) / (tp2 - tp1) * 100)
 
     t1 = time.time()
     list_max(val)
     t2 = time.time()
     print("list_max() timing =", t2 - t1)
-    
 
     t1 = time.time()
     max(val)
     t2 = time.time()
     print("python max() timing =", t2 - t1)
-    print("min() ratio =", (tm2 - tm1)/(tp2 - tp1)*100)
+    print("min() ratio =", (tm2 - tm1) / (tp2 - tp1) * 100)
 
     tm1 = time.time()
     list_sort(val)
     tm2 = time.time()
     print("list_sort() timing =", tm2 - tm1)
-    
+
     tp1 = time.time()
     val.sort()
     tp2 = time.time()
     print("python sort() timing =", tp2 - tp1)
-    print("min() ratio =", (tm2 - tm1)/(tp2 - tp1)*100)
+    print("min() ratio =", (tm2 - tm1) / (tp2 - tp1) * 100)
