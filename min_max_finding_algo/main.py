@@ -1,8 +1,6 @@
 import numpy as np
 import time
 
-sec = time.time()
-
 
 def list_max(in_list):
     imax = in_list[0]
@@ -41,10 +39,38 @@ if __name__ == "__main__":
     # print("hello!")
 
 
-    val = np.random.normal(50, 30, 100).astype(int)
+    val = np.random.normal(50, 30, 50000).astype(int)
 
-    print(list_min(val), min(val))
+    tm1 = time.time()
+    list_min(val)
+    tm2 = time.time()
+    print("list_min() timing =", tm2 - tm1)
 
-    print(list_max(val), max(val))
+    tp1 = time.time()
+    min(val)
+    tp2 = time.time()
+    print("python min() timing =", tp2 - tp1)
+    print("min() ratio =", (tm2 - tm1)/(tp2 - tp1)*100)
 
-    print(list_sort(val))
+    t1 = time.time()
+    list_max(val)
+    t2 = time.time()
+    print("list_max() timing =", t2 - t1)
+    
+
+    t1 = time.time()
+    max(val)
+    t2 = time.time()
+    print("python max() timing =", t2 - t1)
+    print("min() ratio =", (tm2 - tm1)/(tp2 - tp1)*100)
+
+    tm1 = time.time()
+    list_sort(val)
+    tm2 = time.time()
+    print("list_sort() timing =", tm2 - tm1)
+    
+    tp1 = time.time()
+    val.sort()
+    tp2 = time.time()
+    print("python sort() timing =", tp2 - tp1)
+    print("min() ratio =", (tm2 - tm1)/(tp2 - tp1)*100)
