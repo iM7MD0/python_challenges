@@ -4,8 +4,7 @@ import numpy as np
 def search(in_list, val):
     for i in in_list:
         if i == val:
-            x = np.where(in_list == val)
-            return x, val
+            return val
     return None
 
 
