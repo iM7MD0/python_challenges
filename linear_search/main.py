@@ -26,19 +26,19 @@ def search_sorted(in_list, val):
 
 
 if __name__ == '__main__':
-    search_list = np.random.normal(52, 30, 100).astype(int)
+    search_list = np.random.normal(-5402, 330, 1000000).astype(int)
 
     sorted_search_list = search_list.copy()
     sorted_search_list.sort()
 
     print(search_list)
-    t1 = time.time()
-    print(search_list, 44)
-    t2 = time.time()
-    print("normal search timing =", t2 - t1)
+    tm1 = time.time()
+    print(search(search_list, 450))
+    tm2 = time.time()
+    print("normal search timing =", tm2 - tm1)
     print(sorted_search_list)
 
     tp1 = time.time()
-    print(search_sorted(sorted_search_list, 66))
+    print(search_sorted(sorted_search_list, 687))
     tp2 = time.time()
     print("sorted timing =", tp2 - tp1)
