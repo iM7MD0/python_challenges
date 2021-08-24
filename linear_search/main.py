@@ -14,18 +14,19 @@ def search_sorted(in_list, val):
     first_element = py_list[0]
     middle_element = py_list[int(len(py_list) / 2)]
     final_element = py_list[-1]
-    for i in py_list:
-        if first_element <= i < middle_element:
+    if first_element <= val < middle_element:
+        for i in py_list[:middle_element]:
             if i == val:
                 return val
-        elif middle_element <= i <= final_element:
-            if i == val:
+    elif middle_element <= val <= final_element:
+        for j in py_list[middle_element:]:
+            if j == val:
                 return val
     return None
 
 
 if __name__ == '__main__':
-    search_list = np.random.normal(5250, 300, 100000).astype(int)
+    search_list = np.random.normal(52, 30, 100).astype(int)
 
     sorted_search_list = search_list.copy()
     sorted_search_list.sort()
@@ -38,6 +39,6 @@ if __name__ == '__main__':
     print(sorted_search_list)
 
     tp1 = time.time()
-    print(search_sorted(sorted_search_list, 4343))
+    print(search_sorted(sorted_search_list, 66))
     tp2 = time.time()
     print("sorted timing =", tp2 - tp1)
