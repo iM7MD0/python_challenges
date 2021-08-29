@@ -1,7 +1,7 @@
 def is_palindrome(phrase: str):
     global reverse_phrase
     reverse_phrase = phrase[::-1]
-    print(phrase, reverse_phrase )
+    # print(phrase, reverse_phrase)
     if phrase.casefold() == reverse_phrase.casefold():
         return True
     else:
@@ -10,7 +10,9 @@ def is_palindrome(phrase: str):
 
 
 def palindromify(phrase: str):
-    pass
+    if not is_palindrome(phrase):
+        palindromable = phrase.casefold() + reverse_phrase.casefold()
+        print(palindromable)
 
 
 if __name__ == '__main__':
@@ -23,5 +25,6 @@ if __name__ == '__main__':
     assert(is_palindrome(phr_1))
     assert (not is_palindrome(phr_2))
     assert (is_palindrome(phr_3))
-    assert (is_palindrome(phr_4))
+    # assert (is_palindrome(phr_4))
     assert (not is_palindrome(phr_5))
+    palindromify(phr_4)
