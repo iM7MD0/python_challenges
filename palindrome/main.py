@@ -14,6 +14,10 @@ def palindromify(phrase: str):
     return phrase
 
 
+def find_longest_palindrome(phrase: str):
+    pass
+
+
 if __name__ == '__main__':
     phr_1 = 'lololololol'
     phr_2 = 'lololololololo'
@@ -24,7 +28,7 @@ if __name__ == '__main__':
     assert (is_palindrome(phr_1))
     assert (not is_palindrome(phr_2))
     assert (is_palindrome(phr_3))
-    # assert (is_palindrome(phr_4))
+    assert (is_palindrome(phr_4))
     assert (not is_palindrome(phr_5))
 
     print(palindromify(phr_1))
