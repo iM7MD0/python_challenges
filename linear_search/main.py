@@ -12,7 +12,7 @@ def search(in_list, val):
 def search_sorted(in_list, val):
     py_list = list(in_list.copy())
     first_element = py_list[0]
-    middle_element = py_list[int(len(py_list) / 2)]
+    middle_element = int(len(py_list) / 2)
     print("middle_element", middle_element)
     print("py_list[:middle_element]", py_list[:middle_element])
     final_element = py_list[-1]
